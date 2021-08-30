@@ -6,6 +6,7 @@ declare module '@material-ui/core/styles/createTheme' {
   }
 };
 
+//TODO: Figure out what the theme colors and fonts will be
 const themeValues = {
   palette: {
     primary: "",
