@@ -2,7 +2,9 @@ import React from "react";
 
 const LoginPage = () => {
   return (
-    <h1>Login Page</h1>
+    <div data-testid="login-page">
+      <h1>Login Page</h1>
+    </div>
   );
 };
 
