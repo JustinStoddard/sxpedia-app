@@ -14,7 +14,7 @@ const themeValues = {
   fonts: {
     primary: "",
     secondary: "",
-  }
+  },
 };
 
 const themeName = 'SpacexOpedia Theme';
