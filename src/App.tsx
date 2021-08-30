@@ -7,11 +7,12 @@ import LoginPage from './Pages/LoginPage';
 import SignUpPage from './Pages/SignUpPage';
 import HomePage from './Pages/HomePage';
 import NotFoundPage from './Pages/NotFoundPage';
+import Loader from './Components/Common/Loader';
 
 const App = () => {
   return (
     <Router>
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<Loader />}>
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/welcome' component={LandingPage} />
