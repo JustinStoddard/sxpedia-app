@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ApolloProvider } from '@apollo/client';
+import { Auth0Provider } from '@auth0/auth0-react';
+
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { apolloClient } from './Services/apolloClient';
+import { getEnvVar } from './Helpers/getEnvVar';
+import App from './App';
+
+const domain = getEnvVar('REACT_APP_AUTH0_DOMAIN') || "";
+const clientId = getEnvVar('REACT_APP_AUTH0_CLIENTID') || "";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Auth0Provider
+      domain={domain}
+      clientId={clientId}
+      redirectUri={window.location.origin}
+    >
+      <ApolloProvider client={apolloClient}>
+        <App />
+      </ApolloProvider>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
