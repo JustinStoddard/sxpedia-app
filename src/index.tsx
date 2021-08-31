@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/client';
 import { Auth0Provider } from '@auth0/auth0-react';
-import { ThemeProvider, CssBaseline } from '@material-ui/core';
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { apolloClient } from './Services/apolloClient';
 import { getEnvVar } from './Helpers/getEnvVar';
-import theme from './Theme';
 import App from './App';
 
 const domain = getEnvVar('REACT_APP_AUTH0_DOMAIN') || "";
@@ -22,11 +20,7 @@ ReactDOM.render(
       redirectUri={window.location.origin}
     >
       <ApolloProvider client={apolloClient}>
-        <ThemeProvider theme={theme}>
-          <CssBaseline>
-            <App />
-          </CssBaseline>
-        </ThemeProvider>
+        <App />
       </ApolloProvider>
     </Auth0Provider>
   </React.StrictMode>,
